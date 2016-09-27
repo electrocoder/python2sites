@@ -1,5 +1,6 @@
 unipath
-Django
+Django==1.9.10
 django-filer
 django_chartit
 whitenoise
+easy_thumbnails
