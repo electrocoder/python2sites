@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load sites_tags %}
+{% load thumbnail %}
+
+{% block title %}Site Add, Submit Site | {% website_name %}{% endblock %}
+{% block description %}Add sites Python2Sites.{% endblock %}
+{% block keywords %}submit site, framework, web, sites using python,{% endblock %}
+{% block og_description %}Submit Site to Python2Sites{% endblock %}
+{% block og_title %}Submit Site{% endblock %}
+{% block og_url %}{{ request.build_absolute_uri }}{% endblock %}
+{% block og_image %}/static/img/python2sites.png{% endblock %}
+
+{% block content %}
+
+    <!-- Begin page content -->
+    <div class="container">
+
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9">
+
+          <h1>Submit site</h1>
+
+          <div class="row">
+
+    {% if msg_ok %}
+    <div class="alert alert-success" role="alert">{{ msg_ok }}</div>
+    {% endif %}
+
+    {% if msg_err %}
+    <div class="alert alert-warning" role="alert">{{ msg_err }}</div>
+    {% endif %}
+
+          <form action="" method="post"> {% csrf_token %}
+
+            {{ form.as_p }}
+
+          <div class="box-footer">
+            <button type="submit" class="btn btn-lg btn-primary pull-right">Add Site</button>
+          </div>
+
+          </form>
+
+          </div><!--/row-->
+        </div><!--/.col-xs-12.col-sm-9-->
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+          <div class="list-group">
+            <p class="lead"><span class="label label-default">Description:</span></p>
+            <h4>Title: </h4>Web site title. Example: Python2Sites
+            <h4>Web site address: </h4>Web site URL. Example: http://python2sites.com
+            <h4>Description: </h4>Web site summary. Example: Python2Sites is a showcase of
+            websites powered by Python. We've currently
+            got 15 websites listed - please register or login to
+            submit your site or vote for your favorite sites.
+            <h4>Language: </h4>Web site main language.
+            <h4>Tags: </h4>Web site keywords. Please ',' separate. Example: python, sites, django, sumbit,
+            <h4>Source code address: </h4>If available source code address. Example: https://github.com/electrocoder/iotdashboard
+            <h4>Framework: </h4>Python web framework name.
+            <h4>Operating system:: </h4>Server operating system
+            <h4>Webserver: </h4>Framework webserver name
+            <h4>Database: </h4>Framework database
+            <h4>Method: </h4>Framework method
+            <h4>Python version: </h4>Python version
+          </div>
+        </div><!--/.sidebar-offcanvas-->
+      </div><!--/row-->
+
+      <hr>
+
+    </div><!--/.container-->
+
+{% endblock %}

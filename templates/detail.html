@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load sites_tags %}
+{% load thumbnail %}
+
+{% block title %}{{ value.title | title}} | {% website_name %}{% endblock %}
+{% block description %}{{ value.description }}{% endblock %}
+{% block keywords %}{% for i in value.tags_as_list %}{% endfor %}{% endblock %}
+{% block og_description %}{{ value.description | title}}{% endblock %}
+{% block og_title %}{{ value.title | title}}{% endblock %}
+{% block og_url %}{{ request.build_absolute_uri }}{% endblock %}
+{% block og_image %}{% thumbnail value.img 1140x720 crop upscale subject_location=obj.img.subject_location %}{% endblock %}
+
+{% block content %}
+    <!-- Begin page content -->
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-xs-12 col-sm-12">
+
+          <div class="jumbotron">
+            <h1>{{ value.title | title}}</h1>
+            <p>{{ value.description }}</p>
+          </div>
+
+          <img class="img-thumbnail" src="{% thumbnail value.img 1140x720 crop upscale subject_location=obj.img.subject_location %}" alt="{{ value.title }}">
+
+          {% if site_edit %}
+            <button type="button" class="btn btn-danger" onclick="window.location.href='{% url 'site_update' value.slug %}'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update this item</button>
+          {% endif %}
+
+          <p></p>
+
+          <ul class="nav nav-tabs nav-justified">
+            <li><a href="http://www.facebook.com/sharer.php?u={{ request.build_absolute_uri }}" target="_blank"><i class="fa fa-lg fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/share?url={{ request.build_absolute_uri }}&amp;text={{ value.title }}&amp;hashtags={% website_name %}" target="_blank"><i class="fa fa-lg fa-twitter"></i></a></li>
+            <li><a href="https://plus.google.com/share?url={{ request.build_absolute_uri }}" target="_blank"><i class="fa fa-lg fa-google-plus"></i></a></li>
+            <li><a href="http://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}" target="_blank"><i class="fa fa-lg fa-linkedin"></i></a></li>
+          </ul>
+
+          <p></p>
+
+            <div class="table-responsive">
+            <table class="table">
+            <tbody>
+            <tr>
+              <th scope="row"><code>Created by</code></th>
+              <td><a href="/@{{ value.user }}">{{ value.user }}</a> </td>
+            </tr>
+            <tr>
+              <th scope="row"><code>Visit this website at</code></th>
+              <td><a href="{{ value.web_site_address }}" rel="nofollow" target="_blank">{{ value.web_site_address }}</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>Language</code></th>
+              <td>{{ value.language }}</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>Tags</code></th>
+              <td>{% for i in value.tags_as_list %}<a href="/?tag={{ i }}"> {{ i }} </a>{% endfor %}</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>Source code is available for this site at</code></th>
+              <td><a href="{{ value.source_code_address }}" rel="nofollow" target="_blank">{{ value.source_code_address }}</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>Python framework</code></th>
+              <td>{{ value.framework }}</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>Operations system</code></th>
+              <td>{{ value.operating_system }}</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>Webserver</code></th>
+              <td>{{ value.webserver }}</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>Database</code></th>
+              <td>{{ value.database }}</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>Method</code></th>
+              <td>{{ value.method }}</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>Python version as a</code></th>
+              <td>{{ value.python_version }}</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>Publish date</code></th>
+              <td>{{ value.pub_date }}</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>View</code></th>
+              <td>{{ value.views }}</td>
+            </tr>
+            </tbody>
+          </table>
+            </div>
+
+        </div><!--/.col-xs-12.col-sm-9-->
+
+      </div><!--/row-->
+
+      <hr>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load sites_tags %}
+{% load thumbnail %}
+
+{% block title %}Statistics | {% website_name %}{% endblock %}
+{% block description %}{% website_name %} sent to the statistical data of the website.{% endblock %}
+{% block keywords %}python statistical, use python, web page, submit site, framework, web, sites using python,{% endblock %}
+{% block og_description %}{% website_name %} sent to the statistical data of the website.{% endblock %}
+{% block og_title %}Statics {% website_name %}{% endblock %}
+{% block og_url %}{{ request.build_absolute_uri }}{% endblock %}
+{% block og_image %}/static/img/python2sites.png{% endblock %}
+
+{% block content %}
+
+    <!-- Begin page content -->
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-xs-12 col-sm-12">
+
+          <div class="jumbotron">
+            <h1>{% website_name %} Statics</h1>
+          </div>
+
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="{% url 'statistic_language' %}"></iframe>
+          </div>
+
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="{% url 'statistic_framework' %}"></iframe>
+          </div>
+
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="{% url 'statistic_operating_system' %}"></iframe>
+          </div>
+
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="{% url 'statistic_webserver' %}"></iframe>
+          </div>
+
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="{% url 'statistic_database' %}"></iframe>
+          </div>
+
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="{% url 'statistic_method' %}"></iframe>
+          </div>
+
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="{% url 'statistic_python_version' %}"></iframe>
+          </div>
+
+          <p></p>
+
+          <ul class="nav navbar-nav navbar-right social">
+            <li><a href="http://www.facebook.com/sharer.php?u={{ request.build_absolute_uri }}" target="_blank"><i class="fa fa-lg fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/share?url={{ request.build_absolute_uri }}&amp;text={{ value.title }}&amp;hashtags={% website_name %}" target="_blank"><i class="fa fa-lg fa-twitter"></i></a></li>
+            <li><a href="https://plus.google.com/share?url={{ request.build_absolute_uri }}" target="_blank"><i class="fa fa-lg fa-google-plus"></i></a></li>
+            <li><a href="http://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}" target="_blank"><i class="fa fa-lg fa-linkedin"></i></a></li>
+          </ul>
+
+        </div><!--/.col-xs-12.col-sm-9-->
+
+      </div><!--/row-->
+
+      <hr>
+
+    </div><!--/.container-->
+
+{% endblock %}

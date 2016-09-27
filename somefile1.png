@@ -1,0 +1,711 @@
+
+
+<!DOCTYPE html>
+<html lang="tr">
+
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/static/favicon.ico">
+
+
+	<meta name="keywords" content="a/b, test, mobil kullanılabilirlik, beta test, tasarım, 5 saniye testi," />
+
+
+
+	<meta name="description" content="Oyun, kitap, araç, film, gazete, alışveriş, Android Wear, eğitim, eğlence, aksiyon ve diğer kategorilerdeki web site, mobil uygulama ve masaüstü projelerinizin tasarımlarını test ediyoruz." />
+
+
+	<meta name="author" content="Sahin Mersin" />
+
+	<meta name="owner" content="Testions" />
+
+	<meta name="copyright" content="(c) 2015 - 2016" />
+
+
+	<title>Yazılım Test Yöntemleri Ve Test | Testions.com</title>
+
+
+    <meta property="fb:admins" content="testions" />
+    <meta property="og:description" content="Oyun, kitap, araç, film, gazete, alışveriş, Android Wear, eğitim, eğlence, aksiyon ve diğer kategorilerdeki web site, mobil uygulama ve masaüstü projelerinizin tasarımlarını test ediyoruz." />
+    <meta property="og:title" content="Yazılım Test Yöntemleri Ve Test | Testions.com" />
+    <meta property="og:url" content="http://testions.com" />
+    <meta property="og:site_name" content="Testions" />
+    <meta property="og:locale" content="tr" />
+    <meta property="og:type" content="article" />
+    <meta property="twitter:card" content="testions" />
+    <meta property="twitter:site" content="testions" />
+    <meta property="og:image" content="/static/images/5-second-test.jpg" />
+
+
+<!-- Bootstrap Core CSS -->
+<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="/static/css/half-slider.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/static/css/font-awesome.min.css">
+<link href="/static/css/bootstrap-social.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-65388391-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</head>
+
+
+<body>
+
+	<!-- Navigation -->
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Testions (beta)</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="https://testions.wordpress.com/"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>  Blog</a></li>
+					<li><a href="/contact"><span class="glyphicon glyphicon-question-sign"
+							aria-hidden="true"></span>  Destek</a></li>
+							<li><a href="/faq"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>  SSS</a></li>
+							<li><a href="/privacy"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span>  Gizlilik</a></li>
+
+					
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>  Plan ve Giriş
+							<span class="caret"></span>
+					</a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="/pricing/">Ücretler</a></li>
+							<li><a href="/pricing/free-plan/"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>  Topluluk Plan</a></li>
+							<li><a href="/pricing/basic-plan/"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>  Temel Plan</a></li>
+							<li><a href="/pricing/team-plan/"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>  Takım Plan</a></li>
+							<li><a href="/pricing/pro-plan/"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>  Pro Plan</a></li>
+							<li class="divider"></li>
+							<li><a href="#" data-dismiss="modal" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Giriş</a></li>
+							<li><a href="#" data-dismiss="modal" data-toggle="modal" data-target="#registerModal"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  Kayıt Ol</a></li>
+						</ul></li>
+						
+
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					
+						<li><a href="#" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Giriş</a></li>
+					
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
+
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Kapat">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Üye Giriş</h4>
+			</div>
+			<div class="modal-body">
+
+				<form class="form-horizontal" action="/tr/login/" method="post">
+					<input type='hidden' name='csrfmiddlewaretoken' value='KFWcFfeytlG5ISqyL7wzdlKexRuvxVKS' />
+					<fieldset>
+						<div class="form-group">
+							<label for="kullanici_adi" class="col-lg-2 control-label">E-posta</label>
+							<div class="col-lg-10">
+								<input type="email" class="form-control" name="kullanici_adi" id="kullanici_adi"
+									placeholder="E-posta">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="sifre" class="col-lg-2 control-label">Şifre</label>
+							<div class="col-lg-10">
+								<input type="password" class="form-control" name="sifre" id="sifre"
+									placeholder="Şifre"> <span class="help-block">Henüz üye değil misiniz?
+										<a href="#" data-dismiss="modal" data-toggle="modal" data-target="#registerModal"> Hemen kayıt olun!</a>
+								</span> <span class="help-block"><a href="#"
+									data-dismiss="modal" data-toggle="modal"
+									data-target="#passwordModal">Şifremi Unuttum!</a></span>
+
+							</div>
+						</div>
+					</fieldset>
+
+					<div class="progress progress-striped">
+						<div class="progress-bar progress-bar-success"
+							style="width: 100%"></div>
+					</div>
+
+					<a href="/tr/login/facebook/?next=/" class="btn btn-block btn-social btn-facebook"><i class="fa fa-facebook"></i> Facebook ile Giriş</a>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+				<button type="submit" class="btn btn-primary">Giriş</button>
+			</div>
+		</div>
+	</div>
+</div>
+<input type="hidden" name="next" value="" />
+</form>
+
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Kapat">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Üye Kayıt</h4>
+			</div>
+			<div class="modal-body">
+
+				<form class="form-horizontal" action="/tr/sign-up/" method="post">
+					<input type='hidden' name='csrfmiddlewaretoken' value='KFWcFfeytlG5ISqyL7wzdlKexRuvxVKS' />
+					<fieldset>
+						<div class="form-group">
+							<label for="email" class="col-lg-2 control-label">E-posta</label>
+							<div class="col-lg-10">
+								<input type="email" class="form-control" name="email" id="email"
+									placeholder="E-posta">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="sifre_tekrar" class="col-lg-2 control-label">Şifre</label>
+							<div class="col-lg-10">
+								<input type="password" class="form-control" name="sifre_tekrar" id="sifre_tekrar"
+									placeholder="Şifre">
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="sifre" class="col-lg-2 control-label">Şifre Tekrar</label>
+							<div class="col-lg-10">
+								<input type="password" class="form-control" name="sifre" id="sifre"
+									placeholder="Şifre Tekrar"> <span class="help-block">
+										Üye misiniz? <a href="#" data-dismiss="modal" data-toggle="modal"
+									data-target="#loginModal"> Giriş Yap</a>
+								</span>
+							</div>
+						</div>
+					</fieldset>
+
+					<div class="progress progress-striped">
+						<div class="progress-bar progress-bar-info" style="width: 100%"></div>
+					</div>
+
+					<a href="/tr/login/facebook/?next=/" class="btn btn-block btn-social btn-facebook"><i class="fa fa-facebook"></i> Facebook ile Gir</a>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+				<button type="submit" class="btn btn-primary">Kaydet</button>
+			</div>
+		</div>
+	</div>
+</div>
+<input type="hidden" name="next" value="" />
+</form>
+
+<div class="modal fade" id="passwordModal" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Kapat">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Şifremi Unuttum</h4>
+			</div>
+			<div class="modal-body">
+
+				<form class="form-horizontal" action="/tr/lost-password/" method="post"> <input type='hidden' name='csrfmiddlewaretoken' value='KFWcFfeytlG5ISqyL7wzdlKexRuvxVKS' />
+					<fieldset>
+						<div class="form-group">
+							<label for="mail_adresi" class="col-lg-2 control-label">E-posta</label>
+							<div class="col-lg-10">
+								<input type="email" class="form-control" name="mail_adresi" id="mail_adresi"
+									placeholder="E-posta">
+							</div>
+						</div>
+						<div class="form-group">
+
+							<div class="col-lg-10">
+
+
+								<span class="help-block">Üye misiniz? <a href="#"
+									data-dismiss="modal" data-toggle="modal"
+									data-target="#loginModal"> Giriş Yap</a></span>
+
+							</div>
+						</div>
+					</fieldset>
+
+				<div class="progress progress-striped">
+					<div class="progress-bar progress-bar-warning" style="width: 100%"></div>
+				</div>
+
+				<a href="/tr/login/facebook/?next=/" class="btn btn-block btn-social btn-facebook"><i class="fa fa-facebook"></i> Facebook ile Gir</a>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+				<button type="submit" class="btn btn-primary">Şifremi sıfırla!</button>
+					<input type="hidden" name="next" value="" />
+					</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	<!-- Half Page Image Background Carousel Header -->
+	<header id="myCarousel" class="carousel slide">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
+		</ol>
+
+		<!-- Wrapper for Slides -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<!-- Set the first background image using inline CSS below. -->
+				<div class="fill"
+					style="background-image: url('/static/images/5-second-test.jpg');"></div>
+				<div class="carousel-caption">
+					<a href="/add-test/" class="btn btn-success">Şimdi 5 Saniye Testi yap!</a>
+				</div>
+			</div>
+			<div class="item">
+				<!-- Set the second background image using inline CSS below. -->
+				<div class="fill"
+					style="background-image: url('/static/images/a-b-test.jpg');"></div>
+				<div class="carousel-caption">
+					<a href="/add-test/" class="btn btn-info">Şimdi A/B Testi yap!</a>
+				</div>
+			</div>
+			<div class="item">
+				<!-- Set the third background image using inline CSS below. -->
+				<div class="fill"
+					style="background-image: url('/static/images/mobile-usability.jpg');"></div>
+				<div class="carousel-caption">
+					<a href="/add-test/" class="btn btn-warning">Şimdi Mobil Kullanılabilirlik Testi yap!</a>
+				</div>
+			</div>
+			<div class="item">
+				<!-- Set the third background image using inline CSS below. -->
+				<div class="fill"
+					style="background-image: url('/static/images/click-test.jpg');"></div>
+				<div class="carousel-caption">
+					<a href="/add-test/" class="btn btn-danger">Şimdi Tıklama Testi yap!</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Controls -->
+		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+			<span class="icon-prev"></span>
+		</a> <a class="right carousel-control" href="#myCarousel"
+			data-slide="next"> <span class="icon-next"></span>
+		</a>
+
+	</header>
+
+	<!-- Page Content -->
+	<div class="container">
+
+		<div class="row">
+			<div class="col-lg-12">
+
+				<h1 class="text-center">Web site, Mobil uygulama, Uygulama ve tasarımlarını gerçek insanlar ile TEST ET!</h1>
+
+				<div class="btn-group btn-group-justified">
+
+					<a href="#" class="btn btn-success" data-toggle="modal"
+						data-target="#loginModal"><span
+						class="glyphicon glyphicon-user" aria-hidden="true"></span>  Üye Ol</a>
+					<a href="/add-test/" class="btn btn-info"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>  Test Oluştur</a> <a href="/prepare-test/" class="btn btn-warning"><span
+						class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>  Test Et!</a>
+				</div>
+
+
+
+<p></p>
+
+	<hr>
+				<p class="text-center">
+					Ziyaretçilerin ve müşterilerin senin hakkında ne düşünüyor?
+					Testions ile müşteri memnuniyetini test et.
+					5 saniye testi yap.
+					Kullanılabilirlik testini yap. Tıklanma testi yap.
+					Mobil görünüm testini yap. 2 tasarım arasında Yüz Yüze özellik testi yap.
+					<code>Test Et! Tester Ol!</code>
+				</p>
+			</div>
+
+
+		</div>
+
+	<hr>
+
+		<div class="row text-center">
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="/test/view-test/20/" class="thumbnail"><img class="img-rounded" src="/media/post-image-thumbnail-210-210/2016/09/25/temp_MhkvrG9.png" alt="Ekranda Gösterilen Tasarımı 5 Saniye Incelemek."></a>
+					<div class="caption">
+						<h3><a href="/test/view-test/20/" style="color:#086A87">IotHook Arduino</a></h3>
+						<p><span class="glyphicon glyphicon-link" aria-hidden="true"></span><a style="color:#A4A4A4" href="http://bit.ly/2d0lAAZ" rel="nofollow" target="_blank">http://bit.ly/2d0lAAZ</a></p>
+						<p>Ekranda Gösterilen Tasarımı 5 Saniye Incelemek.</p>
+						<p>
+							<a href="#" class="btn btn-success btn-xs">PEGI 3</a> <a
+								href="#" class="btn btn-info btn-xs">5 Saniye Test</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="/test/view-test/19/" class="thumbnail"><img class="img-rounded" src="/media/post-image-thumbnail-210-210/2016/09/25/temp.png" alt="Ekranda Gösterilen Tasarımı 5 Saniye Incelemek."></a>
+					<div class="caption">
+						<h3><a href="/test/view-test/19/" style="color:#086A87">Iothook</a></h3>
+						<p><span class="glyphicon glyphicon-link" aria-hidden="true"></span><a style="color:#A4A4A4" href="http://bit.ly/2dbpyKQ" rel="nofollow" target="_blank">http://bit.ly/2dbpyKQ</a></p>
+						<p>Ekranda Gösterilen Tasarımı 5 Saniye Incelemek.</p>
+						<p>
+							<a href="#" class="btn btn-success btn-xs">PEGI 3</a> <a
+								href="#" class="btn btn-info btn-xs">5 Saniye Test</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="/test/view-test/18/" class="thumbnail"><img class="img-rounded" src="/media/post-image-thumbnail-210-210/2016/09/23/temp.png" alt="Ekranda Gösterilen Tasarımı 5 Saniye Incelemek."></a>
+					<div class="caption">
+						<h3><a href="/test/view-test/18/" style="color:#086A87">Meşe bilişim</a></h3>
+						<p><span class="glyphicon glyphicon-link" aria-hidden="true"></span><a style="color:#A4A4A4" href="http://bit.ly/2dnyGe6" rel="nofollow" target="_blank">http://bit.ly/2dnyGe6</a></p>
+						<p>Ekranda Gösterilen Tasarımı 5 Saniye Incelemek.</p>
+						<p>
+							<a href="#" class="btn btn-success btn-xs">PEGI 3</a> <a
+								href="#" class="btn btn-info btn-xs">5 Saniye Test</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="/test/view-test/17/" class="thumbnail"><img class="img-rounded" src="/media/post-image-thumbnail-210-210/2016/09/22/temp_GoBHxwZ.png" alt="Ekranda Gösterilen Tasarımı 5 Saniye Incelemek."></a>
+					<div class="caption">
+						<h3><a href="/test/view-test/17/" style="color:#086A87">Smdcode</a></h3>
+						<p><span class="glyphicon glyphicon-link" aria-hidden="true"></span><a style="color:#A4A4A4" href="http://bit.ly/2cUTozi" rel="nofollow" target="_blank">http://bit.ly/2cUTozi</a></p>
+						<p>Ekranda Gösterilen Tasarımı 5 Saniye Incelemek.</p>
+						<p>
+							<a href="#" class="btn btn-success btn-xs">PEGI 3</a> <a
+								href="#" class="btn btn-info btn-xs">5 Saniye Test</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="/test/view-test/16/" class="thumbnail"><img class="img-rounded" src="/media/post-image-thumbnail-210-210/2016/09/22/temp_9nWMcCY.png" alt="Ekranda Gösterilen Tasarımı 5 Saniye Incelemek."></a>
+					<div class="caption">
+						<h3><a href="/test/view-test/16/" style="color:#086A87">Ihook</a></h3>
+						<p><span class="glyphicon glyphicon-link" aria-hidden="true"></span><a style="color:#A4A4A4" href="http://bit.ly/2cTNfDQ" rel="nofollow" target="_blank">http://bit.ly/2cTNfDQ</a></p>
+						<p>Ekranda Gösterilen Tasarımı 5 Saniye Incelemek.</p>
+						<p>
+							<a href="#" class="btn btn-success btn-xs">PEGI 3</a> <a
+								href="#" class="btn btn-info btn-xs">5 Saniye Test</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="/test/view-test/15/" class="thumbnail"><img class="img-rounded" src="/media/post-image-thumbnail-210-210/2016/09/22/temp.png" alt="Ekranda Gösterilen Tasarımı 5 Saniye Incelemek."></a>
+					<div class="caption">
+						<h3><a href="/test/view-test/15/" style="color:#086A87">Hemenyika.co</a></h3>
+						<p><span class="glyphicon glyphicon-link" aria-hidden="true"></span><a style="color:#A4A4A4" href="http://bit.ly/2cTwhW8" rel="nofollow" target="_blank">http://bit.ly/2cTwhW8</a></p>
+						<p>Ekranda Gösterilen Tasarımı 5 Saniye Incelemek.</p>
+						<p>
+							<a href="#" class="btn btn-success btn-xs">PEGI 3</a> <a
+								href="#" class="btn btn-info btn-xs">5 Saniye Test</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="/test/view-test/14/" class="thumbnail"><img class="img-rounded" src="/media/post-image-thumbnail-210-210/2016/09/21/temp.png" alt="Ekranda Gösterilen Tasarımı 5 Saniye Incelemek."></a>
+					<div class="caption">
+						<h3><a href="/test/view-test/14/" style="color:#086A87">Iothook</a></h3>
+						<p><span class="glyphicon glyphicon-link" aria-hidden="true"></span><a style="color:#A4A4A4" href="http://bit.ly/2dbpyKQ" rel="nofollow" target="_blank">http://bit.ly/2dbpyKQ</a></p>
+						<p>Ekranda Gösterilen Tasarımı 5 Saniye Incelemek.</p>
+						<p>
+							<a href="#" class="btn btn-success btn-xs">PEGI 3</a> <a
+								href="#" class="btn btn-info btn-xs">5 Saniye Test</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="/test/view-test/13/" class="thumbnail"><img class="img-rounded" src="/media/post-image-thumbnail-210-210/2015/12/09/temp.png" alt="Ekranda Gösterilen Tasarımı 5 Saniye Incelemek."></a>
+					<div class="caption">
+						<h3><a href="/test/view-test/13/" style="color:#086A87">Yazki</a></h3>
+						<p><span class="glyphicon glyphicon-link" aria-hidden="true"></span><a style="color:#A4A4A4" href="http://bit.ly/1Y09eHE" rel="nofollow" target="_blank">http://bit.ly/1Y09eHE</a></p>
+						<p>Ekranda Gösterilen Tasarımı 5 Saniye Incelemek.</p>
+						<p>
+							<a href="#" class="btn btn-success btn-xs">PEGI 3</a> <a
+								href="#" class="btn btn-info btn-xs">5 Saniye Test</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="/test/view-test/12/" class="thumbnail"><img class="img-rounded" src="/media/post-image-thumbnail-210-210/2015/09/21/temp.png" alt="Ekranda Gösterilen Tasarımı 5 Saniye Incelemek."></a>
+					<div class="caption">
+						<h3><a href="/test/view-test/12/" style="color:#086A87">Sigortaya.com</a></h3>
+						<p><span class="glyphicon glyphicon-link" aria-hidden="true"></span><a style="color:#A4A4A4" href="http://bit.ly/1FX5f6o" rel="nofollow" target="_blank">http://bit.ly/1FX5f6o</a></p>
+						<p>Ekranda Gösterilen Tasarımı 5 Saniye Incelemek.</p>
+						<p>
+							<a href="#" class="btn btn-success btn-xs">PEGI 18</a> <a
+								href="#" class="btn btn-info btn-xs">5 Saniye Test</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="/test/view-test/11/" class="thumbnail"><img class="img-rounded" src="/media/post-image-thumbnail-210-210/2015/08/15/temp.png" alt="Ekranda Gösterilen Tasarımı 5 Saniye Incelemek."></a>
+					<div class="caption">
+						<h3><a href="/test/view-test/11/" style="color:#086A87">Testpy</a></h3>
+						<p><span class="glyphicon glyphicon-link" aria-hidden="true"></span><a style="color:#A4A4A4" href="http://bit.ly/1HBhSck" rel="nofollow" target="_blank">http://bit.ly/1HBhSck</a></p>
+						<p>Ekranda Gösterilen Tasarımı 5 Saniye Incelemek.</p>
+						<p>
+							<a href="#" class="btn btn-success btn-xs">PEGI 3</a> <a
+								href="#" class="btn btn-info btn-xs">5 Saniye Test</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="/test/view-test/10/" class="thumbnail"><img class="img-rounded" src="/media/post-image-thumbnail-210-210/2015/07/31/temp_15KbYbs.png" alt="Ekranda Gösterilen Tasarımı 5 Saniye Incelemek."></a>
+					<div class="caption">
+						<h3><a href="/test/view-test/10/" style="color:#086A87">Testpy</a></h3>
+						<p><span class="glyphicon glyphicon-link" aria-hidden="true"></span><a style="color:#A4A4A4" href="http://bit.ly/1HBhSck" rel="nofollow" target="_blank">http://bit.ly/1HBhSck</a></p>
+						<p>Ekranda Gösterilen Tasarımı 5 Saniye Incelemek.</p>
+						<p>
+							<a href="#" class="btn btn-success btn-xs">PEGI 12</a> <a
+								href="#" class="btn btn-info btn-xs">5 Saniye Test</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="/test/view-test/9/" class="thumbnail"><img class="img-rounded" src="/media/post-image-thumbnail-210-210/2015/07/31/temp_0WaT4Ey.png" alt="Ekranda Gösterilen Tasarımı 5 Saniye Incelemek."></a>
+					<div class="caption">
+						<h3><a href="/test/view-test/9/" style="color:#086A87">Testpy</a></h3>
+						<p><span class="glyphicon glyphicon-link" aria-hidden="true"></span><a style="color:#A4A4A4" href="http://bit.ly/1HBhSck" rel="nofollow" target="_blank">http://bit.ly/1HBhSck</a></p>
+						<p>Ekranda Gösterilen Tasarımı 5 Saniye Incelemek.</p>
+						<p>
+							<a href="#" class="btn btn-success btn-xs">PEGI 7</a> <a
+								href="#" class="btn btn-info btn-xs">5 Saniye Test</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="/test/view-test/8/" class="thumbnail"><img class="img-rounded" src="/media/post-image-thumbnail-210-210/2015/07/31/temp.png" alt="Ekranda Gösterilen Tasarımı 5 Saniye Incelemek."></a>
+					<div class="caption">
+						<h3><a href="/test/view-test/8/" style="color:#086A87">Test</a></h3>
+						<p><span class="glyphicon glyphicon-link" aria-hidden="true"></span><a style="color:#A4A4A4" href="http://bit.ly/1TGS4yx" rel="nofollow" target="_blank">http://bit.ly/1TGS4yx</a></p>
+						<p>Ekranda Gösterilen Tasarımı 5 Saniye Incelemek.</p>
+						<p>
+							<a href="#" class="btn btn-success btn-xs">PEGI 3</a> <a
+								href="#" class="btn btn-info btn-xs">5 Saniye Test</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="/test/view-test/7/" class="thumbnail"><img class="img-rounded" src="/media/post-image-thumbnail-210-210/2015/07/30/temp.png" alt="Ekranda Gösterilen Tasarımı 5 Saniye Incelemek."></a>
+					<div class="caption">
+						<h3><a href="/test/view-test/7/" style="color:#086A87">Getbootstrap</a></h3>
+						<p><span class="glyphicon glyphicon-link" aria-hidden="true"></span><a style="color:#A4A4A4" href="http://bit.ly/1KBp6yC" rel="nofollow" target="_blank">http://bit.ly/1KBp6yC</a></p>
+						<p>Ekranda Gösterilen Tasarımı 5 Saniye Incelemek.</p>
+						<p>
+							<a href="#" class="btn btn-success btn-xs">PEGI 3</a> <a
+								href="#" class="btn btn-info btn-xs">5 Saniye Test</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="/test/view-test/6/" class="thumbnail"><img class="img-rounded" src="/media/post-image-thumbnail-210-210/2015/07/22/temp_5Fnfkxg.png" alt="Ekranda Gösterilen Tasarımı 5 Saniye Incelemek."></a>
+					<div class="caption">
+						<h3><a href="/test/view-test/6/" style="color:#086A87">Testions Üye...</a></h3>
+						<p><span class="glyphicon glyphicon-link" aria-hidden="true"></span><a style="color:#A4A4A4" href="http://bit.ly/1TGS4yx" rel="nofollow" target="_blank">http://bit.ly/1TGS4yx</a></p>
+						<p>Ekranda Gösterilen Tasarımı 5 Saniye Incelemek.</p>
+						<p>
+							<a href="#" class="btn btn-success btn-xs">PEGI 3</a> <a
+								href="#" class="btn btn-info btn-xs">5 Saniye Test</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="/test/view-test/5/" class="thumbnail"><img class="img-rounded" src="/media/post-image-thumbnail-210-210/2015/07/22/temp_5f7QQS6.png" alt="Ekranda Gösterilen Tasarımı 5 Saniye Incelemek."></a>
+					<div class="caption">
+						<h3><a href="/test/view-test/5/" style="color:#086A87">Testions rap...</a></h3>
+						<p><span class="glyphicon glyphicon-link" aria-hidden="true"></span><a style="color:#A4A4A4" href="http://bit.ly/1TGS4yx" rel="nofollow" target="_blank">http://bit.ly/1TGS4yx</a></p>
+						<p>Ekranda Gösterilen Tasarımı 5 Saniye Incelemek.</p>
+						<p>
+							<a href="#" class="btn btn-success btn-xs">PEGI 3</a> <a
+								href="#" class="btn btn-info btn-xs">5 Saniye Test</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="/test/view-test/4/" class="thumbnail"><img class="img-rounded" src="/media/post-image-thumbnail-210-210/2015/07/22/temp.png" alt="Ekranda Gösterilen Tasarımı 5 Saniye Incelemek."></a>
+					<div class="caption">
+						<h3><a href="/test/view-test/4/" style="color:#086A87">Testions</a></h3>
+						<p><span class="glyphicon glyphicon-link" aria-hidden="true"></span><a style="color:#A4A4A4" href="http://bit.ly/1TGS4yx" rel="nofollow" target="_blank">http://bit.ly/1TGS4yx</a></p>
+						<p>Ekranda Gösterilen Tasarımı 5 Saniye Incelemek.</p>
+						<p>
+							<a href="#" class="btn btn-success btn-xs">PEGI 3</a> <a
+								href="#" class="btn btn-info btn-xs">5 Saniye Test</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<a href="/pricing/" class="thumbnail"><img class="img-rounded" src="/media/post-image/tested.jpg" alt="tested"></a>
+					<div class="caption">
+						<h3><a href="/pricing/">Ücretsiz Test Ekle!</a></h3>
+						<p>5 saniye testi, tıklama testi, mobil kullanılabilirlik testi ve A/B testlerini hemen ücretsiz kullan.</p>
+						<p>
+							<a href="#" data-toggle="modal" data-target="#loginModal" class="btn btn-success btn-xs">Giriş Yap</a> <a
+								href="/pricing/" class="btn btn-info btn-xs">$0 /aylık</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<hr>
+
+		<!-- Footer -->
+<footer class="footer">
+	<div class="row">
+		<div class="col-lg-12">
+			<p>Copyright &copy; <a style="color:#6D728A" href="http://www.mesebilisim.com">MeşeBilişim</a> 2015 - 2016 - Testions
+			<a class="btn btn-social-icon btn-twitter" target="_blank" href="https://twitter.com/testions">
+				<i class="fa fa-twitter"></i>
+			  </a>
+			<a class="btn btn-social-icon btn-facebook" target="_blank" href="https://www.facebook.com/testions">
+				<i class="fa fa-facebook"></i>
+			  </a>
+			<a class="btn btn-social-icon btn-google" target="_blank" href="https://plus.google.com/u/0/118065689820757805692/about">
+				<i class="fa fa-google"></i>
+			  </a>
+			<a target="_blank" href="https://www.python.org/" rel="nofollow">
+				<img src="https://www.python.org/static/community_logos/python-powered-w-100x40.png" />
+			  </a>
+			  </p>
+		</div>
+	</div>
+	<!-- /.row -->
+</footer>
+</p>
+
+
+	</div>
+	<!-- /.container -->
+
+	<!-- jQuery -->
+	<script src="/static/js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="/static/js/bootstrap.min.js"></script>
+
+	<!-- Script to Activate the Carousel -->
+	<script>
+		$('.carousel').carousel({
+			interval : 5000
+		//changes the speed
+		})
+	</script>
+
+</body>
+
+</html>

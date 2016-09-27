@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load sites_tags %}
+{% load thumbnail %}
+
+{% block title %}About | {% website_name %}{% endblock %}
+
+{% block content %}
+    <!-- Begin page content -->
+    <div class="container">
+
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-12">
+          <div class="jumbotron">
+            <h1>About {% website_name %}</h1>
+          </div>
+          <div class="row">
+
+          <h2>{% website_name %}: </h2>
+
+          <p>This site is prepared using the Python programming language is designed to list the
+            website. Python is a programming language that lets you work quickly and integrate systems more effectively. </p>
+
+          <h3>Python Framework List</h3>
+          <ul>
+          {% for i in framework_list %}
+            <li>{{ i }}</li>
+          {% endfor %}
+          </ul>
+
+          <h3>Python Running Operating Systems (OS) List</h3>
+          <ul>
+          {% for i in operating_system_list %}
+            <li>{{ i }}</li>
+          {% endfor %}
+          </ul>
+
+          <h3>Python Running Webserver List</h3>
+          <ul>
+          {% for i in webserver_list %}
+            <li>{{ i }}</li>
+          {% endfor %}
+          </ul>
+
+          <h3>Python Database List</h3>
+          <ul>
+          {% for i in database_list %}
+            <li>{{ i }}</li>
+          {% endfor %}
+          </ul>
+
+          <h3>Python Method List</h3>
+          <ul>
+          {% for i in method_list %}
+            <li>{{ i }}</li>
+          {% endfor %}
+          </ul>
+
+          <h3>Python Version List</h3>
+          <ul>
+          {% for i in python_version_list %}
+            <li>{{ i }}</li>
+          {% endfor %}
+          </ul>
+
+
+          </div><!--/row-->
+        </div><!--/.col-xs-12.col-sm-9-->
+
+      </div><!--/row-->
+
+      <hr>
+
+    </div><!--/.container-->
+{% endblock %}
