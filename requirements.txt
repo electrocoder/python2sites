@@ -4,3 +4,4 @@ django-filer
 django_chartit
 whitenoise
 easy_thumbnails
+Pillow==2.9.0
