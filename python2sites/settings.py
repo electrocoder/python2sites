@@ -23,6 +23,7 @@ TO = [ email for name, email in ADMINS ]
 SECRET_KEY = 'ju(83j8+3ol(dtn9^q05p1=fe)%x&pno2ci9#l^v*&n86ys(^g'
 
 DEBUG = False
+FILER_DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
