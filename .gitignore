@@ -10,6 +10,7 @@ __pycache__
 0*_*
 */migrations/*.py
 py3*
+.idea
 
 ### Python template
 # Byte-compiled / optimized / DLL files
