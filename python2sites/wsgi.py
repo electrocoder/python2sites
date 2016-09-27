@@ -11,14 +11,12 @@ import os
 import sys
 
 from django.core.wsgi import get_wsgi_application
-from whitenoise.django import DjangoWhiteNoise
-from dj_static import Cling
 
-path = '/home/django/python2sites'
-if path not in sys.path:
-    sys.path.append(path)
+sys.path.append('/home')
+sys.path.append('/home/django')
+sys.path.append('/home/django/python2sites')
+sys.path.append('/home/django/python2sites/python2sites')
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "python2sites.settings")
 
-application = Cling(get_wsgi_application())
-application = DjangoWhiteNoise(application)
+application = get_wsgi_application()
