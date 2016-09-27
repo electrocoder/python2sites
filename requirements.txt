@@ -2,3 +2,4 @@ unipath
 Django
 django-filer
 django_chartit
+whitenoise
