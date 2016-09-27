@@ -14,7 +14,7 @@ from django.core.wsgi import get_wsgi_application
 from whitenoise.django import DjangoWhiteNoise
 from dj_static import Cling
 
-path = '/home/django'
+path = '/home/django/python2sites'
 if path not in sys.path:
     sys.path.append(path)
 
