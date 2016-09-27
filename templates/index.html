@@ -34,6 +34,7 @@
               <a href="{% url 'detail' i.slug %}">
                 <h4>{% if i.source_code_address %}<i class="fa fa-code-fork" aria-hidden="true"></i>{% endif %} {{ i.title | title | truncatechars:13 }}</h4>
                 <img class="img-thumbnail" src="{% thumbnail i.img 270x170 crop %}" alt="{{ value.title }}">
+                  {{ MEDIA_URL }}{{ i.img }}
               </a><p></p>
               <a class="text-left" href="/@/{{ i.user }}">{{ i.user | truncatechars:10 }}</a> /
               <a class="text-right" href="/">{{ i.pub_date |date:"m/d/Y"|lower }}</a>
