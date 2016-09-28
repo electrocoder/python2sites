@@ -34,7 +34,7 @@
               <a href="{% url 'detail' i.slug %}">
                 <h4>{% if i.source_code_address %}<i class="fa fa-code-fork" aria-hidden="true"></i>{% endif %} {{ i.title | title | truncatechars:13 }}</h4>
                   {% thumbnail i.img "270x170" crop="80% top" format="PNG" as im %}
-                    <img class="img-responsive" src="{{ im.url }}" alt="{{ im }}">
+                    <img class="img-responsive" src="{{ im.url }}" alt="{{ im.title }}">
                   {% endthumbnail %}
               </a><p></p>
               <a class="text-left" href="/@/{{ i.user }}">{{ i.user | truncatechars:10 }}</a> /

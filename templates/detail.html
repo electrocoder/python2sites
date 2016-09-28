@@ -9,7 +9,7 @@
 {% block og_description %}{{ value.description | title}}{% endblock %}
 {% block og_title %}{{ value.title | title}}{% endblock %}
 {% block og_url %}{{ request.build_absolute_uri }}{% endblock %}
-{% block og_image %}{% thumbnail value.img 1140x720 crop upscale subject_location=obj.img.subject_location %}{% endblock %}
+{% block og_image %}{{ value.img }}{% endblock %}
 
 {% block content %}
     <!-- Begin page content -->
@@ -24,7 +24,9 @@
             <p>{{ value.description }}</p>
           </div>
 
-          <img class="img-thumbnail" src="{% thumbnail value.img 1140x720 crop upscale subject_location=obj.img.subject_location %}" alt="{{ value.title }}">
+          {% thumbnail value.img "1140x720" crop="60% top" format="PNG" as im %}
+            <img class="img-responsive" src="{{ im.url }}" alt="{{ im.title }}">
+          {% endthumbnail %}
 
           {% if site_edit %}
             <button type="button" class="btn btn-danger" onclick="window.location.href='{% url 'site_update' value.slug %}'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update this item</button>
