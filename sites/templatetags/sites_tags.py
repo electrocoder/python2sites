@@ -4,9 +4,11 @@ Sites
 
 from __future__ import unicode_literals
 from django import template
-from python2sites.settings import WEBSITE_NAME
+from django.utils.html import mark_safe
 import time
 import os
+
+from python2sites.settings import WEBSITE_NAME
 
 from sites.models import Site
 from tags.models import Tag
@@ -48,6 +50,8 @@ def tags():
         t = (i.name.split(','))
         for j in t:
             tag_list += """<a href = "/?tag=%s" > %s </a>""" % (j, j)
+
+    tag_list = mark_safe(tag_list)
 
     return tag_list
 

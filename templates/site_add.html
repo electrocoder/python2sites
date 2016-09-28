@@ -25,11 +25,11 @@
           <div class="row">
 
     {% if msg_ok %}
-    <div class="alert alert-success" role="alert">{{ msg_ok }}</div>
+        <div class="alert alert-success" role="alert">{{ msg_ok }}</div>
     {% endif %}
 
     {% if msg_err %}
-    <div class="alert alert-warning" role="alert">{{ msg_err }}</div>
+        <div class="alert alert-warning" role="alert">{{ msg_err }}</div>
     {% endif %}
 
           <form action="" method="post"> {% csrf_token %}
@@ -37,7 +37,7 @@
             {{ form.as_p }}
 
           <div class="box-footer">
-            <button type="submit" class="btn btn-lg btn-primary pull-right">Add Site</button>
+            <button type="submit" class="btn btn-lg btn-primary pull-right">Send Site</button>
           </div>
 
           </form>

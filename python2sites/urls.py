@@ -7,6 +7,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.views.static import serve
 from django.conf.urls.static import static
+from django.http import HttpResponse
 
 from sites import views as sites
 from profiles import views as profiles
@@ -32,11 +33,16 @@ urlpatterns = [
     url(r'^signup/$', profiles.user_signup, name='signup'),
     url(r'^logout/$', profiles.user_logout, name='logout'),
     url(r'^forget-password/$', profiles.user_forget_password, name='user_forget_password'),
+    url(r'^user/activation/(?P<key>[^/]*)/$', profiles.user_activation, name='user_activation'),
     url(r'^profile/$', profiles.profile, name='profile'),
 
     url(r'^about/$', sites.about, name='about'),
 
     url(r'^admin/', include(admin.site.urls)),
+
+    # yandex mail
+    url(r'^a0214dcfb209\.html$', lambda r: HttpResponse("e485605de1a2", content_type="text/plain")),  # yandex mail
+
 ]
 
 urlpatterns += [

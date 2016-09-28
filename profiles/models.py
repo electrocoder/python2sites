@@ -32,7 +32,7 @@ class Profile(models.Model):
     facebook_profile_name    = models.CharField(max_length=20, null=True, blank=True)
     google_plus_profile_name = models.CharField(max_length=20, null=True, blank=True)
     views                    = models.PositiveSmallIntegerField(default=0)
-    aktivate_key             = models.CharField(max_length=50, blank=False)
+    activation_key           = models.CharField(max_length=50, blank=False)
 
     def __str__(self):
         return self.user.username

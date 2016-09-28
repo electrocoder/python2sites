@@ -27,7 +27,7 @@ class ProfileForm(ModelForm):
         model = Profile
         exclude = [
             'user',
-            'aktivate_key',
+            'activation_key',
             'views',
         ]
 

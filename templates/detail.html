@@ -5,7 +5,7 @@
 
 {% block title %}{{ value.title | title}} | {% website_name %}{% endblock %}
 {% block description %}{{ value.description }}{% endblock %}
-{% block keywords %}{% for i in value.tags_as_list %}{% endfor %}{% endblock %}
+{% block keywords %}{% for i in value.tags_as_list %}{{ i }},{% endfor %}{% endblock %}
 {% block og_description %}{{ value.description | title}}{% endblock %}
 {% block og_title %}{{ value.title | title}}{% endblock %}
 {% block og_url %}{{ request.build_absolute_uri }}{% endblock %}

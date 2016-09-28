@@ -9,7 +9,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <link rel="icon" href="{% static 'favicon.ico' %}">
 
-    <title>{% website_name %} Login  | {% website_name %} </title>
+    <title>{% website_name %} Message  | {% website_name %} </title>
     <meta name="description" content="Website developed using Python">
     <meta name="keywords" content="sites, django, python, TurboGears, web2py, Tornado, wsgi, Django Development Server,">
     <meta name="author" content="{% website_name %}.com">
@@ -45,6 +45,8 @@
 
     <div class="container">
 
+    <h2 class="form-signin-heading"><a href="/">{% website_name %}</a></h2>
+
     {% if msg_ok %}
       <div class="alert alert-success" role="alert">{{ msg_ok }}</div>
     {% endif %}
@@ -52,29 +54,6 @@
     {% if msg_err %}
       <div class="alert alert-warning" role="alert">{{ msg_err }}</div>
     {% endif %}
-
-      <form class="form-signin" method="post">{% csrf_token %}
-        <h2 class="form-signin-heading"><a href="/">{% website_name %}</a> Login</h2>
-        <label for="email" class="sr-only">Email or Username</label>
-        <input type="text" id="email" name="email" class="form-control" placeholder="Email or Username" required autofocus>
-        <label for="password" class="sr-only">Password</label>
-        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-
-        <nav aria-label="...">
-          <ul class="pager">
-            <li class="previous"><a href="{% url 'user_forget_password' %}"><i class="fa fa-key" aria-hidden="true"></i> Forget password</a></li>
-            <li class="next"><a href="{% url 'signup' %}">Sign up <i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
-          </ul>
-        </nav>
-
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
-        <input type="hidden" name="next" value="{{ request.GET.next }}" />
-      </form>
 
     </div> <!-- /container -->
 

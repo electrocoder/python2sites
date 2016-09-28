@@ -53,7 +53,7 @@
     {% endif %}
 
       <form class="form-signin" method="post">{% csrf_token %}
-        <h2 class="form-signin-heading">{% website_name %} Sign up</h2>
+        <h2 class="form-signin-heading"><a href="/">{% website_name %}</a> Sign up</h2>
         <label for="username" class="sr-only">Username</label>
         <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
         <label for="email" class="sr-only">Email or Username</label>
@@ -62,7 +62,7 @@
         <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
         <div class="checkbox">
           <label>
-            <input type="checkbox" value="remember-me"> By signing up, you agree to the Terms of Service and Privacy Policy,
+            <input type="checkbox" value="remember-me" id="news" name="news"> By signing up, you agree to the Terms of Service and Privacy Policy,
               including Cookie Use. Others will be able to find you by email or phone number when provided.
           </label>
         </div>

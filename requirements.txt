@@ -1,8 +1,9 @@
-unipath
 Django==1.9.10
-sorl-thumbnail
-django_chartit
-whitenoise
-easy_thumbnails
+django-chartit==0.2.7
+easy-thumbnails==2.3
+gunicorn==19.6.0
 Pillow==2.9.0
-gunicorn
+pkg-resources==0.0.0
+sorl-thumbnail==12.3
+Unipath==1.1
+whitenoise==3.2.2

@@ -46,7 +46,10 @@ INSTALLED_APPS = (
     'tags',
 )
 
-THUMBNAIL_HIGH_RESOLUTION = True
+THUMBNAIL_DEBUG = True
+THUMBNAIL_QUALITY = 85
+
+THUMBNAIL_FORCE_OVERWRITE = True
 
 ACCOUNT_ACTIVATION_DAYS = 7
 
@@ -83,8 +86,8 @@ WSGI_APPLICATION = 'python2sites.wsgi.application'
 
 
 WEBSITE_NAME = "Python2Sites"
-WEBSITE_URL =  WEBSITE_NAME + ".com"
-WEBSITE_DESCRIPTION = "Python 2 sites. Django, Flask"
+WEBSITE_URL =  "http://" + WEBSITE_NAME + ".com"
+WEBSITE_DESCRIPTION = "Python 2 sites. Django, Flask,"
 TWITTER_PROFILE = ""
 FACEBOOK_PROFILE = ""
 GOOG_PLUS_PROFILE = ""
