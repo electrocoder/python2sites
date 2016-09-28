@@ -1,6 +1,6 @@
 unipath
 Django==1.9.10
-django-filer
+sorl-thumbnail
 django_chartit
 whitenoise
 easy_thumbnails
