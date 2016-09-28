@@ -1,18 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
-
-### Local settings
-python2sites/settings_secret.py
-*.sqlite3
-*.sock
-.DS_Store
-._*
-__pycache__
-0*_*
-*/migrations/*.py
-py3*
-.idea
-py3python2sites
-
 ### Python template
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -150,3 +136,18 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+### Local settings
+python2sites/settings_secret.py
+*.sqlite3
+*.sock
+.DS_Store
+._*
+__pycache__
+0*_*
+*/migrations/*.py
+py3*
+.idea/
+py3python2sites
+profiles/migrations/
+sites/migrations/
+tags/migrations/
