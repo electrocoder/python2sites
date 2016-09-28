@@ -37,7 +37,7 @@
                     <img class="img-responsive" src="{{ im.url }}" alt="{{ im.title }}">
                   {% endthumbnail %}
               </a><p></p>
-              <a class="text-left" href="/@/{{ i.user }}">{{ i.user | truncatechars:10 }}</a> /
+              <a class="text-left" href="/@{{ i.user }}">{{ i.user | truncatechars:10 }}</a> /
               <a class="text-right" href="/">{{ i.pub_date |date:"m/d/Y"|lower }}</a>
             </div><!--/.col-xs-6.col-lg-4-->
           {% endfor %}
