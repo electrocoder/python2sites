@@ -9,8 +9,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
+from django.core.mail import send_mail
 
-from python2sites.settings import LOGIN_URL
+from python2sites.settings import LOGIN_URL, emailmsg, DEFAULT_FROM_EMAIL, WEBSITE_NAME, TO
 
 from sites.models import *
 from .forms import SiteForm
@@ -104,6 +105,11 @@ def site_add(request):
             f.save()
 
             Tag(name=f.tags).save()
+
+            # admin
+            msg = (u"Hi admin;\n\nNew site submit. {0}\n\n".format(f.title))
+            msg += emailmsg
+            send_mail("{0} | New web site".format(WEBSITE_NAME), msg, DEFAULT_FROM_EMAIL, TO, True)
 
             msg_ok = u'Submit site successful.'
         else:

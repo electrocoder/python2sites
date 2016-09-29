@@ -41,17 +41,22 @@ def total_sites():
 @register.simple_tag
 def tags():
     """
+    To optimize please...
     """
+    import collections
+
     tag = Tag.objects.all()
 
-    tag_list = ''
+    tag_list = []
 
     for i in tag:
-        t = (i.name.split(','))
+        t = i.name.split(',')
         for j in t:
-            tag_list += """<a href = "/?tag=%s" > %s </a>""" % (j, j)
+            if not j == '':
+                tag_list.append(j.strip())
 
-    tag_list = mark_safe(tag_list)
+    results = collections.Counter(tag_list)
 
-    return tag_list
+    return results
+
 

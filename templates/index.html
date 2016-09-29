@@ -48,7 +48,14 @@
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
           <div class="list-group">
             <p class="lead"><span class="label label-default">Tags:</span></p>
-            {% tags %}
+              {% tags as tag_list %}
+
+              {% if tag_list %}
+                {% for i in tag_list %}
+                    <a href = "/?tag={{ i }}"> {{ i }}</a>
+                {% endfor %}
+              {% endif%}
+
           </div>
         </div><!--/.sidebar-offcanvas-->
       </div><!--/row-->
