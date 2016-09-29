@@ -148,6 +148,7 @@ WEBSERVERS = (
     ('mod_wsgi', 'mod_wsgi'),
     ('Nginx WSGI', 'Nginx WSGI'),
     ('PyWX ', 'PyWX '),
+    ('Google', 'Google'),
 )
 
 DATABASES = (
@@ -164,6 +165,7 @@ DATABASES = (
     ('SQLite', 'SQLite'),
     ('XmlDatabases', 'XmlDatabases'),
     ('PostgreSQL', 'PostgreSQL'),
+    ('Google', 'Google'),
 )
 
 METHOD = (
