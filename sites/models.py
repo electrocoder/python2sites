@@ -280,10 +280,10 @@ class Site(models.Model):
         super(Site, self).save(*args, **kwargs)
         if not self.slug:
             slug = self.web_site_address
-            slug = slug.replace(u'httpwww', '')
-            slug = slug.replace(u'httpswww', '')
-            slug = slug.replace(u'http', '')
-            slug = slug.replace(u'https', '')
+            slug = slug.replace(u'http://www', '')
+            slug = slug.replace(u'https://www', '')
+            slug = slug.replace(u'http://', '')
+            slug = slug.replace(u'https://', '')
             slug = slug.replace(u'www', '')
             self.slug = djslugify(slug + "-" + str(self.id))
             self.save()
