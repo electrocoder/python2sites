@@ -9,7 +9,7 @@ class SiteSitemap(Sitemap):
     priority = 0.5
 
     def items(self):
-        return Site.objects.filter(enable=True)[:20]
+        return Site.objects.filter(enable=True)
 
     def lastmod(self, obj):
         return obj.pub_date
