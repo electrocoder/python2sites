@@ -149,6 +149,7 @@ WEBSERVERS = (
     ('Nginx WSGI', 'Nginx WSGI'),
     ('PyWX ', 'PyWX '),
     ('Google', 'Google'),
+    ('Amazon', 'Amazon'),
 )
 
 DATABASES = (
@@ -166,6 +167,7 @@ DATABASES = (
     ('XmlDatabases', 'XmlDatabases'),
     ('PostgreSQL', 'PostgreSQL'),
     ('Google', 'Google'),
+    ('Amazon', 'Amazon'),
 )
 
 METHOD = (
