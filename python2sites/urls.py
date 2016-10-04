@@ -8,11 +8,13 @@ from django.conf import settings
 from django.views.static import serve
 from django.conf.urls.static import static
 from django.http import HttpResponse
+from django.contrib.sitemaps.views import sitemap
 
 from sites import views as sites
 from profiles import views as profiles
 
 from .feeds import * # rss
+from .sitemaps import * # sitemaps
 
 urlpatterns = [
     url(r'^$', sites.index, name='index'),
@@ -47,6 +49,15 @@ urlpatterns = [
 
     url(r'^rss/$', Feed()),  # rss
 
+]
+
+sitemaps = {
+    'sites': SiteSitemap,
+}
+
+urlpatterns += [
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    # url(r'^sitemap-(?P<section>.+)\.xml$', 'sitemap', {'sitemaps': sitemaps}),
 ]
 
 urlpatterns += [
