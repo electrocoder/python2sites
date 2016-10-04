@@ -23,21 +23,22 @@ def index(request):
     :param request:
     :return:
     """
-    if request.GET:
-        try:
-            sites_with_source = request.GET['source']
-            if sites_with_source == 'True':
-                values = Site.objects.filter(enable=True).exclude(source_code_address='').order_by('-pub_date')
-        except:
-            pass
-        try:
-            tag = request.GET['tag']
-            values = Site.objects.filter(enable=True, tags__contains=tag).order_by('-pub_date')
-            print(values)
-        except:
-            pass
-    else:
-        values = Site.objects.filter(enable=True).order_by('-pub_date')
+    values = Site.objects.filter(enable=True).order_by('-pub_date')
+
+    try:
+        sites_with_source = request.GET['source']
+        print('source')
+        if sites_with_source == 'True':
+            print('source true')
+            values = values.exclude(source_code_address='')
+    except:
+        pass
+
+    try:
+        tag = request.GET['tag']
+        values = values.filter(tags__contains=tag)
+    except:
+        pass
 
     paginator = Paginator(values, 18)
 
