@@ -49,6 +49,7 @@ urlpatterns = [
 
     url(r'^rss/$', Feed()),  # rss
 
+    url(r'^robots\.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /static/", content_type="text/plain")),
 ]
 
 sitemaps = {
@@ -57,7 +58,6 @@ sitemaps = {
 
 urlpatterns += [
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
-    # url(r'^sitemap-(?P<section>.+)\.xml$', 'sitemap', {'sitemaps': sitemaps}),
 ]
 
 urlpatterns += [
