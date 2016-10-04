@@ -12,6 +12,8 @@ from django.http import HttpResponse
 from sites import views as sites
 from profiles import views as profiles
 
+from .feeds import * # rss
+
 urlpatterns = [
     url(r'^$', sites.index, name='index'),
     url(r'^detail/(?P<slug>[^/]*)$', sites.detail, name='detail'),
@@ -42,6 +44,8 @@ urlpatterns = [
 
     # yandex mail
     url(r'^a0214dcfb209\.html$', lambda r: HttpResponse("e485605de1a2", content_type="text/plain")),  # yandex mail
+
+    url(r'^rss/$', Feed()),  # rss
 
 ]
 
