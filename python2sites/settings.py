@@ -29,6 +29,7 @@ ALLOWED_HOSTS = [
     '188.166.48.117',
     '.python2sites.com',
     '.python2sites.com.',
+    '*',
 ]
 
 INSTALLED_APPS = (

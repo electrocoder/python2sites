@@ -18,10 +18,10 @@ from .sitemaps import * # sitemaps
 
 urlpatterns = [
     url(r'^$', sites.index, name='index'),
-    url(r'^detail/(?P<slug>[^/]*)$', sites.detail, name='detail'),
-    url(r'^@(?P<username>[^/]*)$', sites.username, name='username'),
-    url(r'^submit-site$', sites.site_add, name='site_add'),
-    url(r'^site-update/(?P<slug>[^/]*)$', sites.site_update, name='site_update'),
+    url(r'^detail/(?P<slug>[^/]*)/$', sites.detail, name='detail'),
+    url(r'^@(?P<username>[^/]*)/$', sites.username, name='username'),
+    url(r'^submit-site/$', sites.site_add, name='site_add'),
+    url(r'^site-update/(?P<slug>[^/]*)/$', sites.site_update, name='site_update'),
 
     url(r'^statistics/$', sites.statistics, name='statistics'),
     url(r'^statistic-language/$', sites.statistic_language, name='statistic_language'),
